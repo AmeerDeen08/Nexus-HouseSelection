@@ -114,6 +114,14 @@ const FinalSpinner = (props) => {
         handleFinal(selectedHouse.value);
         sendToGoogleSheets({...student, house: selectedHouse.value});
       }
+      else if (remainingHouses.length === 4) {
+        const randomIndex = Math.floor(Math.random() * remainingHouses.length);
+        const selectedHouse = remainingHouses[randomIndex];
+        finalValue.innerHTML = `<p>Congrats! Your House: ${selectedHouse.value}</p>`;
+        spinBtn.disabled = true;
+        handleFinal(selectedHouse.value);
+        sendToGoogleSheets({...student, house: selectedHouse.value});
+      }
     };
     
     let count = 0;
