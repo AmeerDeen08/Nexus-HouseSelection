@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, use } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -18,6 +18,7 @@ const StudentForm = () => {
   const [Last3Houses, setLast3Houses] = useState([]); // To store the last 3 houses
   const [rollNumberError, setRollNumberError] = useState(false);
   const [loading, setLoading] = useState(true); // Loading state for data fetching
+  const [Watermark,setWatermark]=useState(false);
 
   useEffect(() => {
     const fetchRollNumbers = async () => {
@@ -34,7 +35,8 @@ const StudentForm = () => {
       } catch (error) {
         console.error('Error fetching roll numbers:', error);
       } finally {
-        setLoading(false); // Set loading to false after data fetch
+        setLoading(false);
+        setWatermark(true); // Set loading to false after data fetch
       }
     };
 
@@ -151,7 +153,7 @@ const StudentForm = () => {
           </Form>
         </div>
       )}
-      <p className="mt-3 watermark">github | @Ameerdeen08</p>
+      {Watermark && <p className="mt-3 watermark">github | @Ameerdeen08</p>}
     </div>
   );
 };
