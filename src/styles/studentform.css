@@ -35,7 +35,12 @@ body {
     padding: 2em; /* Adjust padding for a more compact layout on mobile */
     margin: 0 auto;
   max-width: 34.37em; 
-  margin-top: 35px;
+  margin-top: 40px;
+  }
+  .contact{
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
   }
 }
 
@@ -58,7 +63,7 @@ body {
   height: auto;
   max-height: 2000px;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 90px;
   
 }
 
@@ -118,4 +123,21 @@ flex-direction: column;
   width: 100px;
   height: 100px;
   position: inherit;
+}
+
+.contact {
+  display: flex;
+  align-items: center; /* Vertically align text and icon */
+  justify-content: center; /* Horizontally center everything */
+  gap: 5px; /* Add some space between the text and icon */
+  color: #fff;
+  opacity: 0.9;
+  font-size: 14px; /* Adjust as per your preference */
+}
+
+.phone {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle; /* Ensures alignment with text */
+  position: relative;
 }
