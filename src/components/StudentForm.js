@@ -151,7 +151,7 @@ const StudentForm = () => {
           </Form>
         </div>
       )}
-      <p className="mt-2 watermark">@Ameerdeen08</p>
+      <p className="mt-3 watermark">github | @Ameerdeen08</p>
     </div>
   );
 };

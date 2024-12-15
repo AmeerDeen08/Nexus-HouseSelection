@@ -88,7 +88,10 @@ flex-direction: column;
 
 .watermark{
   position: inherit;
-  opacity: 0;
+ text-align: center;
+ color: #ffffff;
+ opacity: 0.2;
+ font-size: 12px;
 }
 
 .butcon{
