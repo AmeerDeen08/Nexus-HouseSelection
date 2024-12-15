@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: rgb(16,2,255);  
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Full viewport height */
+}
+
+.formcontainer {
+  width: 2000px;
+  margin: auto;
+  max-width: 34.37em;
+  background-color: #ffffff; /* Ensure the container has a background color */
+  padding: 3em;
+  border-radius: 1em;
+  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+  z-index: 1; /* Ensure the form is above the background */
+}
+
+@media screen and (max-width: 768px) {
+  .formcontainer {
+    width: 90%; /* 10% gap on left and right for mobile screens */
+    padding: 2em; /* Adjust padding for a more compact layout on mobile */
+    margin: 0 auto; /* Center the container on mobile */
+  }
+
+  .headercontainer {
+    margin-bottom: 20px;
+    width: 90%; /* 10% gap on left and right for mobile screens */
+    padding: 2em; /* Adjust padding for a more compact layout on mobile */
+    margin: 0 auto;
+  max-width: 34.37em; 
+  margin-top: 35px;
+  }
+}
+
+.submitButton {
+  border-radius: 0;
+  justify-items: center;
+}
+.headercontainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 1;
+  max-width: 34.37em; 
+ 
+  margin-bottom: 20px; 
+  padding: 1em; /* Add padding around the image */
+  background-color: #fff; /* Add a background if needed */
+  border-radius: 1em; /* Match other containers' styles */
+  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+  height: auto;
+  max-height: 2000px;
+  flex-direction: column;
+  margin-top: 60px;
+  
+}
+
+.title img {
+  
+
+  position: inherit;
+  width: 110px;
+  height: 110px;
+  margin: 13px;
+}
+
+.title{
+display: flex;
+justify-content: center;
+align-items: center;
+
+flex-direction: column;
+}
+
+.linee{
+  width: auto;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+.watermark{
+  position: inherit;
+  opacity: 0;
+}
+
+.butcon{
+  flex-direction: column;
+}
+
+.loader-container {
+  width: 2000px;
+  margin: auto;
+  max-width: 10.37em;
+  background-color: #ffffff; /* Ensure the container has a background color */
+  padding: 3em;
+  border-radius: 1em;
+  box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+  z-index: 1; /* Ensure the form is above the background */
+  position: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.loader-container img {
+  width: 100px;
+  height: 100px;
+  position: inherit;
+}
