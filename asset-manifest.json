@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.5ca62141.css",
-    "main.js": "./static/js/main.ecd41f94.js",
+    "main.css": "./static/css/main.d9e11746.css",
+    "main.js": "./static/js/main.c738e434.js",
     "static/js/488.56b251f5.chunk.js": "./static/js/488.56b251f5.chunk.js",
     "static/media/nexusLogo.png": "./static/media/nexusLogo.9efbc50249ec32523aee.png",
     "static/media/Social.jpg": "./static/media/Social.05acbf7db5a065b3230d.jpg",
     "static/media/leftArrow.png": "./static/media/leftArrow.13e2669868998683823a.png",
     "static/media/Loader.gif": "./static/media/Loader.c15e3963c5963b3e4484.gif",
     "index.html": "./index.html",
-    "main.5ca62141.css.map": "./static/css/main.5ca62141.css.map",
-    "main.ecd41f94.js.map": "./static/js/main.ecd41f94.js.map",
+    "main.d9e11746.css.map": "./static/css/main.d9e11746.css.map",
+    "main.c738e434.js.map": "./static/js/main.c738e434.js.map",
     "488.56b251f5.chunk.js.map": "./static/js/488.56b251f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ca62141.css",
-    "static/js/main.ecd41f94.js"
+    "static/css/main.d9e11746.css",
+    "static/js/main.c738e434.js"
   ]
 }
