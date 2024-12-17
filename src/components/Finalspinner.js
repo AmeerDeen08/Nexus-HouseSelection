@@ -14,11 +14,13 @@ const FinalSpinner = (props) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const { student, setStudent } = useContext(StudentContext); // Access context properly
 
-
+  const last2Houses=props.last3Houses.slice(-2)
+  const last1House=props.last3Houses.slice(-1)
+const newHouseCount=props.HouseCount===4 ? (1) : (props.HouseCount+1);
 
 
   const handleFinal = useCallback((houseVal) => {
-    setFinalDetails({ ...student, house: houseVal });
+    setFinalDetails({ ...student, house: houseVal,houseCount:newHouseCount });
     setHouse(houseVal);
     setShowOverlay(true);
   }, [student]);
@@ -94,7 +96,9 @@ const FinalSpinner = (props) => {
         finalValue.innerHTML = `<p>Congrats! Your House: ${remainingHouses[0].value}</p>`;
         spinBtn.disabled = true;
         handleFinal(remainingHouses[0].value);
-        sendToGoogleSheets({...student, house: remainingHouses[0].value});
+        sendToGoogleSheets({...student, house: remainingHouses[0].value,houseCount:newHouseCount});
+        // console.log(last1House);
+        // console.log(last2Houses)
       }
       // If two houses are not in the last three, randomly select one
       else if (remainingHouses.length === 2) {
@@ -103,7 +107,7 @@ const FinalSpinner = (props) => {
         finalValue.innerHTML = `<p>Congrats! Your House: ${selectedHouse.value}</p>`;
         spinBtn.disabled = true;
         handleFinal(selectedHouse.value);
-        sendToGoogleSheets({...student, house: selectedHouse.value});
+        sendToGoogleSheets({...student, house: selectedHouse.value,houseCount:newHouseCount});
       }
       // If all three houses are not in the last three, randomly select one
       else if (remainingHouses.length === 3) {
@@ -112,7 +116,7 @@ const FinalSpinner = (props) => {
         finalValue.innerHTML = `<p>Congrats! Your House: ${selectedHouse.value}</p>`;
         spinBtn.disabled = true;
         handleFinal(selectedHouse.value);
-        sendToGoogleSheets({...student, house: selectedHouse.value});
+        sendToGoogleSheets({...student, house: selectedHouse.value,houseCount:newHouseCount});
       }
       else if (remainingHouses.length === 4) {
         const randomIndex = Math.floor(Math.random() * remainingHouses.length);
@@ -120,7 +124,7 @@ const FinalSpinner = (props) => {
         finalValue.innerHTML = `<p>Congrats! Your House: ${selectedHouse.value}</p>`;
         spinBtn.disabled = true;
         handleFinal(selectedHouse.value);
-        sendToGoogleSheets({...student, house: selectedHouse.value});
+        sendToGoogleSheets({...student, house: selectedHouse.value,houseCount:newHouseCount});
       }
     };
     
@@ -162,7 +166,7 @@ const FinalSpinner = (props) => {
   const sendToGoogleSheets = async (data) => {
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzVG69yB_RpNiOJFibi76ef6uysQg_Wy7FIpVoB0eRxqpRgo2FySr3T-KX7uRVLHMXP/exec",
+        "https://script.google.com/macros/s/AKfycby_l38b9R3TP3fUgEM3jm5HYtZh03u3ZOVQOv_-r1s9Tx1-P3wRcVswXoNxs9vrEKur/exec",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -172,6 +176,7 @@ const FinalSpinner = (props) => {
             MobileNumber: data.phone,
             Email: data.email,
             HouseAllotted: data.house,
+            HouseCount: data.houseCount,
           }),
           mode: "no-cors",
         }

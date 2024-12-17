@@ -19,16 +19,18 @@ const StudentForm = () => {
   const [rollNumberError, setRollNumberError] = useState(false);
   const [loading, setLoading] = useState(true); // Loading state for data fetching
   const [Watermark,setWatermark]=useState(false);
+  const [HouseCount,setHouseCount]=useState(0);
 
   useEffect(() => {
     const fetchRollNumbers = async () => {
       try {
         setLoading(true); // Set loading to true before fetching data
-        const response = await fetch('https://script.google.com/macros/s/AKfycbzVG69yB_RpNiOJFibi76ef6uysQg_Wy7FIpVoB0eRxqpRgo2FySr3T-KX7uRVLHMXP/exec');
+        const response = await fetch('https://script.google.com/macros/s/AKfycby_l38b9R3TP3fUgEM3jm5HYtZh03u3ZOVQOv_-r1s9Tx1-P3wRcVswXoNxs9vrEKur/exec');
         const result = await response.json();
         if (result.message === "Data retrieved successfully.") {
           setExistingRollNumbers(result.rollNumbers);
           setLast3Houses(result.last3Houses);
+          setHouseCount(result.houseCount);
         } else {
           console.error(result.message);
         }
@@ -76,7 +78,7 @@ const StudentForm = () => {
           <img src={loaderGif} alt="Loading..." />
         </div>
       ) : submitted ? (
-        <FinalSpinner setSubmitted={setSubmitted} last3Houses={Last3Houses} />
+        <FinalSpinner setSubmitted={setSubmitted} last3Houses={Last3Houses} HouseCount={HouseCount}/>
       ) : (
         <div>
           <div className='headercontainer'>
